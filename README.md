@@ -1,4 +1,4 @@
-# site_streaming
+# VueStreaming
 
 ## Project setup
 ```
