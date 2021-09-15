@@ -1,11 +1,10 @@
 <template>
   <Header />
-  <router-view></router-view>
+  <router-view :movies="movies"></router-view>
 </template>
 
 <script>
 import Header from "./components/Header";
-
 
 export default {
   name: "App",
