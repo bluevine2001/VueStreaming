@@ -1,24 +1,10 @@
 # VueStreaming
 
-## Project setup
-```
-npm install
-```
+## Qu'est-ce que ç'est ?
+Une WebApp qui rescences les films les plus populaires du moment !
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Comment ça fonctionne ?
+cette appli fonctionne grâce à l'api TMDB (The Movie DataBase) qui permet de récupérer 
+toutes les données des films les plus populaires du moment.
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
