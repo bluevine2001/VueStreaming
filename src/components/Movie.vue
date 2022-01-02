@@ -1,7 +1,7 @@
 <template>
   <div class="inner">
     <div class="image">
-      <img :src="movie.poster_path" alt="affiche-film" width="250" />
+      <img :src="movie.poster_path" alt="affiche-film" width="250" height="350" />
     </div>
     <div class="title" @click="$emit('clicked-movie',movie.id)">
       <h5>{{ movie.title }}</h5>

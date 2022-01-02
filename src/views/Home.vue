@@ -1,4 +1,5 @@
 <template>
+    <Header @search="searchMovies(query)" />
   <LoginModal v-show="!connected" />
   <Movies @clicked-movie="getInfo" :movies="movies" />
 </template>
@@ -6,12 +7,15 @@
 <script>
 import LoginModal from "../components/LoginModal";
 import Movies from "../components/Movies";
+import Header from "../components/Header";
+
 
 export default {
   name: "Home",
   components: {
     LoginModal,
     Movies,
+    Header,
   },
   data() {
     return {
@@ -33,15 +37,20 @@ export default {
   },
   methods: {
     getInfo(id){
-      console.log(id);
-      const movies = this.movies;
-      console.log(movies);
-      this.$router.push({ path: 'moviedetails', query: {id:id}});
+      this.$router.push({ path: '/movie/'+id});
     },
     async getMovies(url){
         const res = await fetch(url)
         const data = await res.json()
         return data
+    },
+    searchMovies(query){
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=c8eb38f71a620396f9fcd16374987cb0&query=${query}`)
+        .then(response => response.json()).then(data => {
+          this.movies.value = data.results;
+          query = "";
+          console.log(this.movies.value);
+         });
     }
   },
 };

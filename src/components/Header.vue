@@ -2,7 +2,7 @@
   <nav class="navbar navbar-light" style="background-color: #e3f2fd">
     <div class="container-fluid">
       <a class="navbar-brand">VueStreaming</a>
-      <Searchbar />
+      <Searchbar @search="search(text)" />
     </div>
   </nav>
 </template>
@@ -12,12 +12,18 @@ import Searchbar from "./Searchbar.vue";
 export default {
   name: "Header",
   data() {
-    return {};
+    return {
+    };
   },
   components: {
     Searchbar,
   },
-  methods: {},
+  methods: {
+    search(text){
+      this.$emit("search", text);
+      console.log(text);
+    }
+  },
 };
 </script>
 
