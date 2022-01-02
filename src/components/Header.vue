@@ -2,7 +2,7 @@
   <nav class="navbar navbar-light" style="background-color: #e3f2fd">
     <div class="container-fluid">
       <a class="navbar-brand">VueStreaming</a>
-      <Searchbar @search="search(text)" />
+      <Searchbar @search="search" />
     </div>
   </nav>
 </template>

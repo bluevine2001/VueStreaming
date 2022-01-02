@@ -26,4 +26,9 @@ export default {
 .movie {
   padding: 1%;
 }
+@media (max-width : 850px) {
+  .movie{
+    width:50%
+}
+}
 </style>

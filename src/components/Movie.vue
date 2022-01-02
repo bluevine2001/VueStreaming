@@ -1,7 +1,7 @@
 <template>
   <div class="inner">
     <div class="image">
-      <img :src="movie.poster_path" alt="affiche-film" width="250" height="350" />
+      <img :src="movie.poster_path" alt="affiche-film" height="350" />
     </div>
     <div class="title" @click="$emit('clicked-movie',movie.id)">
       <h5>{{ movie.title }}</h5>
@@ -34,4 +34,10 @@ export default {
   background-color: lightgrey;
   padding-bottom: 1%;
 }
+@media (max-width : 1200px) {
+  .image img{
+    width:100%
+}
+}
+
 </style>

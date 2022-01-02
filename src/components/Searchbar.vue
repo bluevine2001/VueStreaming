@@ -18,13 +18,18 @@ console.log(search);
 export default {
   name: "Searchbar",
   methods:{
-searchMovies(){
-      
-      if(search.value != ""){        
-        this.$emit("search", this.search.value);
+    searchMovies(){
+      if(search.value != ""){  
+        let query = search.value;      
+        this.$emit("search", query);
+        //console.log(query);
       }
-    },
-    
-  }
+    },    
+  },
+  data(){
+    return{
+      search
+    } 
+    }
 };
 </script>
