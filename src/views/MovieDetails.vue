@@ -1,4 +1,5 @@
 <template>
+<Header />
   <div id="moviedetails">
     Détails {{ $route.params.id }}
   </div>
@@ -9,11 +10,13 @@
 
 <script>
 
-
+import Header from "../components/Header";
 //console.log(id);
 export default {
   name: "MovieDetails",
-  // https://api.themoviedb.org/3/movie/{external_id}?api_key=c8eb38f71a620396f9fcd16374987cb0&language=fr-FR&external_source=imdb_id
+  components: {
+    Header,
+  },
   async mounted() {
     const id = this.$route.params.id;
     const api_key = "api_key=c8eb38f71a620396f9fcd16374987cb0";
@@ -32,10 +35,6 @@ export default {
     //this.displayMovie(id);
 
     document.getElementById("moviedetails").innerHTML = `<div id="wrapper"><h1>${title}</h1><br><img src="${posterPath}"><p>date de sortie : ${data.release_date} note: ${data.vote_average}</p><br><p>synopsis: ${movieOverview}</p></div>`;
-        
-
-
-
   },
 
   methods: {
