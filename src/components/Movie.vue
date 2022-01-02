@@ -34,6 +34,10 @@ export default {
   background-color: lightgrey;
   padding-bottom: 1%;
 }
+h5:hover{
+cursor: pointer;
+color:blue;
+}
 @media (max-width : 1200px) {
   .image img{
     width:100%
